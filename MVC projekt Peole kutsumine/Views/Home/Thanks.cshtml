@@ -4,5 +4,24 @@
     ViewBag.Title = "Thanks";
 }
 
-<h2>Thanks</h2>
+<div>
+    <p> Tänan sind, @Model.Name </p>
 
+</div>
+<div>
+    @if (Model.WillAttend == true)
+    {
+        @:Ootame sind kallis sõber!
+        <p>
+            <img src="~/Images/kutse.jpg" />
+        </p>
+    }
+    else
+    {
+        @:Väga kurb uudis. Näeme hiljem!
+        <p>
+            <img src="~/Images/kutse.jpg" />
+        </p>
+    }
+    @ViewBag.Message @*ViewBag.Message - отчет об отправке письма с приглашением*@
+</div>
