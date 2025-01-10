@@ -121,7 +121,8 @@ namespace MVC_projekt_Peole_kutsumine.Controllers
         }
         [HttpPost]
         //Добавьте кнопку "Отправить напоминание/Meeldetuletus", по нажатию на которую должно отправиться
-        //письмо с приложением(файлом) и отобразиться соответствующее представление с сообщением об отправке письма. 
+        //письмо с приложением(файлом) и отобразиться соответствующее
+        //представление с сообщением об отправке письма. 
         public ActionResult Meeldetuletus(Guest guest, string Meeldetuletus)
         {
             if (!string.IsNullOrEmpty(Meeldetuletus))
