@@ -1,5 +1,6 @@
 ﻿using MVC_projekt_Peole_kutsumine.Models;
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Web.Helpers;
 using System.Web.Mvc;
@@ -150,6 +151,12 @@ namespace MVC_projekt_Peole_kutsumine.Controllers
             }
 
             return View("Thanks", guest);
+        }
+        GuestContext db = new GuestContext();
+        public ActionResult Guests()
+        {
+            IEnumerable<Guest> guests = db.Guests;
+            return View(guests);
         }
     }
 }
