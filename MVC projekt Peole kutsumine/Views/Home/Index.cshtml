@@ -58,12 +58,13 @@
             width: 100%;
             text-align: center;
             height: auto;
-        } 
-        .img img {
-            width: 50%;
-            height: auto;
-            border-radius: 30px;
         }
+
+            .img img {
+                width: 50%;
+                height: auto;
+                border-radius: 30px;
+            }
     </style>
 </head>
 <body>
@@ -87,18 +88,25 @@
                 <p>Teade puudub.</p>
             </div>
         }
+
         @if (ViewBag.ImagePath != null)
         {
             <div class="img">
                 <img src="@Url.Content(ViewBag.ImagePath)" alt="Kutse pilt" />
             </div>
         }
+
         @if (ViewBag.ImagePath == null && ViewBag.HolidayImage != null)
         {
             <div class="img">
                 <img src="@Url.Content(ViewBag.HolidayImage)" alt="Holiday Image" />
             </div>
         }
+
+        <!-- Выводим информацию о статусе аутентификации -->
+        <div class="message">
+            <p>@ViewBag.LoginStatus</p>
+        </div>
 
         <div class="text-center">
             @Html.ActionLink("Vastan", "Ankeet", "Ankeet", new { @class = "btn btn-primary" })
